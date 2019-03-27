@@ -16,6 +16,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/post', 'PostController@index')->name('viewPost');
+/*Route::get('/post', 'PostController@index')->name('viewPost');
 Route::get('/addPost', 'PostController@create')->name('addPost');
-Route::post('/storePost', 'PostController@store')->name('storePost');
+Route::post('/storePost', 'PostController@store')->name('storePost');*/
+
+Auth::routes();
+
+Route::resource('posts', 'PostController');
+
+Route::get('/home', 'HomeController@index')->name('home');

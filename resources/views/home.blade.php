@@ -1,11 +1,22 @@
-@extends('../layouts.app')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
-<div class="text-center mt-5 mb-5">
-    <a href="{{ route('viewPost') }}" class="btn btn-info">
-        Go to posts
-    </a>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    New Blog
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
 @endsection
